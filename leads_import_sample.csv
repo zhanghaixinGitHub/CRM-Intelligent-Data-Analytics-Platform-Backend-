@@ -1,0 +1,3 @@
+lead_code,lead_name,customer_name,source,region,product_direction,priority,status,owner,contact,phone,notes
+LEADIMP9001,导入-智能眼镜项目,北极星科技,市场活动,华东,AR眼镜,中,线索录入,张强,陈总,13900000001,用于验证CSV导入功能
+LEADIMP9002,导入-车载视觉方案,星河汽车,渠道推荐,华南,Camera,高,线索验证,刘海,李经理,13900000002,需要安排技术交流

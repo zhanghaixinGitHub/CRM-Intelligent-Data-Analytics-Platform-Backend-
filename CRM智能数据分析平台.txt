@@ -1,0 +1,17 @@
+后端启动（PyCharm）
+方式A：点运行配置启动（推荐）
+    打开你这个 CRM 运行配置
+    确认：
+    Interpreter：D:\pyCharmProjects\workSpace02\.conda\crm_ai\python.exe
+    Module：uvicorn
+    Parameters：app.main:app --host 127.0.0.1 --port 8000
+    Working directory：D:\pyCharmProjects\workSpace02
+    点运行（绿色三角）
+方式B：终端命令启动
+    cd D:\pyCharmProjects\workSpace02
+    chcp 65001
+    $env:PYTHONUTF8 = "1"
+    .\.conda\crm_ai\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
+后端地址：
+    http://127.0.0.1:8000
+文档：http://127.0.0.1:8000/docs
