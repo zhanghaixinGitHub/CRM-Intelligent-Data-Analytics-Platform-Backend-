@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import text
 from sqlalchemy.orm import Session
 from app.api.routes_ai import router as ai_router
+from app.api.routes_ai_advanced import router as ai_advanced_router
 from app.api.routes_customer import router as customer_router
 from app.api.routes_dashboard import router as dashboard_router
 from app.api.routes_fulfillment import router as fulfillment_router
@@ -58,5 +59,6 @@ app.include_router(opportunity_router)
 app.include_router(lead_router)
 app.include_router(fulfillment_router)
 app.include_router(ai_router)
+app.include_router(ai_advanced_router)
 app.include_router(system_router)
 

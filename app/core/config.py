@@ -18,6 +18,20 @@ class Settings(BaseModel):
     llm_model: str = "gpt-4o-mini"
     llm_base_url: str = "https://api.openai-proxy.org/v1"
     llm_api_key: str = "sk-rbfyYt7GrXr9H3teqm56li0Jz8MsH0eRNhZs4MKZDH6inxKg"
+    # Prompt 版本号：用于可观测性和回溯（生产中建议跟随发布版本维护）
+    llm_prompt_version: str = "v1.1.0"
+    # 场景化模型路由：正式项目常按场景做模型分流（成本/速度/质量平衡）
+    # 说明：
+    # - general：普通问答或默认场景
+    # - prompt_lab：提示词实验场景
+    # - agent_analysis：多代理分析场景
+    # - arbiter：仲裁汇总场景（可用更强模型）
+    llm_model_router: dict[str, str] = {
+        "general": "gpt-4o-mini",
+        "prompt_lab": "gpt-4o-mini",
+        "agent_analysis": "gpt-4o-mini",
+        "arbiter": "gpt-4o-mini",
+    }
 
 
 settings = Settings()

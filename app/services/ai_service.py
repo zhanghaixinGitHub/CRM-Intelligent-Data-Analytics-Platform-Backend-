@@ -26,17 +26,17 @@ class AIService:
         """
         CRMLogger.info("AIService.ask", f"收到问题：{question}")
         prompt = f"""
-你是CRM智能数据分析助手，请用中文回答，要求简洁可执行。
-用户问题：{question}
-
-请严格按下面格式回复：
-回答：
-<你的分析结论>
-SQL建议：
-<可执行的SQLite SQL或伪SQL>
-图表建议：
-<推荐的图表类型和原因>
-"""
+            你是CRM智能数据分析助手，请用中文回答，要求简洁可执行。
+            用户问题：{question}
+            
+            请严格按下面格式回复：
+            回答：
+            <你的分析结论>
+            SQL建议：
+            <可执行的SQLite SQL或伪SQL>
+            图表建议：
+            <推荐的图表类型和原因>
+            """
         response = cls._llm.invoke(prompt)
         text = response.content if isinstance(response.content, str) else str(response.content)
 
